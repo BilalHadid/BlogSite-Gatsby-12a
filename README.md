@@ -7,6 +7,10 @@
   Gatsby minimal starter
 </h1>
 
+## LIVE
+
+[CLICK HERE](https://blog-site-bilalhadid.netlify.app/)
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
