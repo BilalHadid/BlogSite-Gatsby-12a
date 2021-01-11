@@ -3,6 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../component/Layout";
 
+const logo = require("../images/logo.png");
 const Blog = () => {
   const data = useStaticQuery(
     graphql`
@@ -30,9 +31,34 @@ const Blog = () => {
   );
   return (
     <Layout>
-      <p>
-        <Link to="/">Go back to the homepage</Link>
-      </p>
+      <title>Blog Site</title>
+      <div className="Main">
+        {/* <h1 style={headingStyles}>Congratulations</h1> */}
+        <img
+          src={logo}
+          alt=""
+          style={{
+            height: "100px",
+            width: "100px",
+            marginTop: "-25px",
+            cursor: "pointer",
+          }}
+        />
+        <div className="mainLink">
+          <ul className="cl-effect-1">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link to="/404">Contact</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <ul className="posts">
         {data.allContentfulBlogPost.edges.map((edge) => {
           return (
@@ -45,7 +71,7 @@ const Blog = () => {
               </div>
               {edge.node.featuredImage && (
                 <Img
-                  className="featured"
+                  className="featured2"
                   fluid={edge.node.featuredImage.fluid}
                   alt={edge.node.title}
                 />

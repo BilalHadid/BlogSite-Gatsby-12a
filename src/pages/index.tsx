@@ -39,7 +39,7 @@ const IndexPage = () => {
                 <Link to="/blog">Blog</Link>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/404">Contact</Link>
               </li>
             </ul>
           </div>

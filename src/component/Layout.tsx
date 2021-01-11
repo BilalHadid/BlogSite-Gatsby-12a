@@ -4,7 +4,7 @@ type LayoutProp = {
 };
 
 const Layout = ({ children }: LayoutProp) => {
-  return <div>{children}</div>;
+  return <div className="AllOver">{children}</div>;
 };
 
 export default Layout;

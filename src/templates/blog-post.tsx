@@ -4,6 +4,8 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Img from "gatsby-image";
 import Layout from "../component/Layout";
 
+const logo = require("../images/logo.png");
+
 export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
@@ -33,12 +35,34 @@ const BlogPost = (props) => {
   };
   return (
     <Layout>
-      <Link to="/blog/">Visit the Blog Page</Link>
+      <title>Blog Site</title>
+      <div className="Main">
+        {/* <h1 style={headingStyles}>Congratulations</h1> */}
+        <img
+          src={logo}
+          alt=""
+          style={{
+            height: "100px",
+            width: "100px",
+            marginTop: "-25px",
+            cursor: "pointer",
+          }}
+        />
+        <div className="mainLink">
+          <ul className="cl-effect-1">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link to="/404">Contact</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div className="content">
-        <h1>{props.data.contentfulBlogPost.title}</h1>
-        <span className="meta">
-          Posted on {props.data.contentfulBlogPost.publishedDate}
-        </span>
         {props.data.contentfulBlogPost.featuredImage && (
           <Img
             className="featured"
@@ -46,8 +70,14 @@ const BlogPost = (props) => {
             alt={props.data.contentfulBlogPost.title}
           />
         )}
-        <h1>It is a long established fact a reader be distracted</h1>
-        <p>{props.data.contentfulBlogPost.body1.body1}</p>
+        <div className="SubContent">
+          <h1>{props.data.contentfulBlogPost.title}</h1>
+          <span className="meta">
+            Posted on {props.data.contentfulBlogPost.publishedDate}
+          </span>
+
+          <p>{props.data.contentfulBlogPost.body1.body1}</p>
+        </div>
         {/* {documentToReactComponents(props.data.contentfulBlogPost.body)} */}
       </div>
     </Layout>
