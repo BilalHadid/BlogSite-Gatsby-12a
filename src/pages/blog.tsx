@@ -75,7 +75,7 @@ const Blog: React.FC<any> = () => {
           return (
             <li className="post" key={edge.node.id}>
               <h2>
-                <Link to={`/blog/${edge.node.slug}/`}>{edge.node.title}</Link>
+                <Link to="/blog">{edge.node.title}</Link>
               </h2>
               <div className="meta">
                 <span>Posted on {edge.node.publishedDate}</span>
