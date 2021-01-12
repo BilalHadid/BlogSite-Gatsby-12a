@@ -1,4 +1,5 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useContext } from "react";
+
 type LayoutProp = {
   children: ReactNode;
 };

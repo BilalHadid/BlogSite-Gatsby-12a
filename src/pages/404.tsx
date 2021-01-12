@@ -50,7 +50,7 @@ const NotFoundPage = () => {
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/404">Contact</Link>
+              <Link to="/404">Login</Link>
             </li>
           </ul>
         </div>

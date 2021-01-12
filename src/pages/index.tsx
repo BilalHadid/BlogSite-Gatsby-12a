@@ -3,6 +3,7 @@ import "./Main.css";
 // import * as logo from "../images/logo.png";
 import { Link } from "gatsby";
 import Layout from "../component/Layout";
+
 // styles
 const logo = require("../images/logo.png");
 const pageStyles = {};

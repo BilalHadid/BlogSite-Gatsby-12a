@@ -201,3 +201,14 @@
     height: 80vh;
   }
 }
+.SignIn {
+  color: #555;
+  padding: 8px 12px;
+  text-decoration: none;
+  border: 1px solid #555;
+}
+.SignIn:hover {
+  color: #fff;
+  border-color: #222;
+  background-color: #222;
+}

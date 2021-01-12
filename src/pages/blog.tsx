@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../component/Layout";
+import { auth, provider } from "../utils/Signup";
 
 const logo = require("../images/logo.png");
-const Blog = () => {
+const Blog: React.FC<any> = () => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -29,6 +30,16 @@ const Blog = () => {
       }
     `
   );
+  const [user, setUser] = useState("");
+  const signIn = () => {
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        const data = result.user.displayName;
+        setUser(data);
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <Layout>
       <title>Blog Site</title>
@@ -78,7 +89,13 @@ const Blog = () => {
               )}
               <p className="excerpt">{edge.node.excerpt.excerpt}</p>
               <div className="button">
-                <Link to={`/blog/${edge.node.slug}/`}>Read More</Link>
+                {user > "" ? (
+                  <Link to={`/blog/${edge.node.slug}/`}>Read More</Link>
+                ) : (
+                  <button className="SignIn" onClick={signIn}>
+                    SignIn For Read More
+                  </button>
+                )}
               </div>
             </li>
           );
