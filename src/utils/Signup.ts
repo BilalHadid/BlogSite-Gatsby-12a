@@ -1,5 +1,5 @@
-import firebase from "firebase";
-
+import firebase from "firebase/app";
+import "firebase/auth";
 firebase.initializeApp({
   apiKey: "AIzaSyAvZ5MdJMVkqW8TdRjD0oj41vjWETTqaEE",
   authDomain: "blogauth-9f72b.firebaseapp.com",
